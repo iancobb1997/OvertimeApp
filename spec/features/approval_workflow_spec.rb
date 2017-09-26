@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 describe 'navigate' do
-	before do
-		@admin_user = FactoryGirl.create(:admin_user)
-		login_as(@admin_user, :scope => :user)
-	end
+  before do
+    @admin_user = FactoryGirl.create(:admin_user)
+    login_as(@admin_user, :scope => :user)
+  end
 
-	describe 'edit' do
+  describe 'edit' do
     before do
       @post = FactoryGirl.create(:post)
       visit edit_post_path(@post)
@@ -28,5 +28,5 @@ describe 'navigate' do
 
       expect(page).to_not have_content('Approved')
     end
-	end
+  end
 end
